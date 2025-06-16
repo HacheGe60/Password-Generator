@@ -3,3 +3,54 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 const symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "}", "[", "]", "|", ";", ":", "<", ">", ".", ",", "?", "/"];
+
+const charactersEl = document.querySelector("#characters");
+const numbersEl = document.querySelector("#numbers");
+const symbolsEl = document.querySelector("#symbols");
+const lengthValueEl = document.querySelector("#lengthValue");
+const lengthEl = document.querySelector("#length");
+const generateBtn = document.querySelector("#generateBtn");
+const password1El = document.querySelector("#password1");
+const password2El = document.querySelector("#password2");
+charactersEl.checked = true;
+
+
+
+lengthEl.addEventListener("input", () => {
+    lengthValueEl.textContent = lengthEl.value < 10 ? `0${lengthEl.value}` : lengthEl.value;
+});
+
+
+function generatePassword() {
+    let passwords = [];
+    for (let i = 0; i < 2; i++) {
+        let arr = [];
+        let password = "";
+        const includesCharacters = charactersEl.checked;
+        const includesNumbers = numbersEl.checked;
+        const includesSymbols = symbolsEl.checked;
+
+        if (includesCharacters) {
+            arr = arr.concat(characters);
+        }
+        if (includesNumbers) {
+            arr = arr.concat(numbers);
+        }
+        if (includesSymbols) {
+            arr = arr.concat(symbols);
+        }
+
+        if (arr.length === 0) {
+            arr = characters.concat(numbers, symbols);
+        }
+
+        for (let i = 0; i < lengthEl.value; i++) {
+            const randomIndex = Math.floor(Math.random() * arr.length);
+            password += arr[randomIndex];
+        }
+        passwords.push(password);
+    }
+
+    password1El.textContent = passwords[0];
+    password2El.textContent = passwords[1];
+}

@@ -13,17 +13,28 @@
             <h1>Generate a<br><span>random password</span></h1>
             <p>Never use an insecure password again.</p>
             <div class="options">
-                <label for="characters">Characters</label>
-                <input type="checkbox" name="characters" id="characters">
-                <label for="numbers">Numbers</label>
-                <input type="checkbox" name="numbers" id="numbers">
-                <label for="symbols">Symbols</label>
-                <input type="checkbox" name="symbols" id="symbols">
+                <div class="option">
+                    <label for="characters">Characters</label>
+                    <input type="checkbox" name="characters" id="characters">
+                </div>
+                <div class="option">
+                    <label for="numbers">Numbers</label>
+                    <input type="checkbox" name="numbers" id="numbers">
+                </div>
+                <div class="option">
+                    <label for="symbols">Symbols</label>
+                    <input type="checkbox" name="symbols" id="symbols">
+                </div>
             </div>
-            <button>Generate password</button>
+            <div class="length">
+                <label for="length">Length: <span id="lengthValue">17</span></label>
+                <input type="range" class="range" name="length" id="length" min="4" max="30">
+            </div>
+            <button class="generateBtn" id="generateBtn" onclick="generatePassword()">Generate password</button>
+            <hr>
             <div class="passwords">
-                <p id="password1" class="password"></p>
-                <p id="password2" class="password"></p>
+                <p id="password1" class="password">password one</p>
+                <p id="password2" class="password">password two</p>
             </div>
         </div>
 
