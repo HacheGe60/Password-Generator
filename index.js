@@ -13,6 +13,7 @@ const generateBtn = document.querySelector("#generateBtn");
 const password1El = document.querySelector("#password1");
 const password2El = document.querySelector("#password2");
 charactersEl.checked = true;
+const containerEl = document.querySelector(".container");
 
 
 
@@ -54,3 +55,26 @@ function generatePassword() {
     password1El.textContent = passwords[0];
     password2El.textContent = passwords[1];
 }
+
+function dayNight() {
+    const dayNightEl = document.querySelector("#dayNight");
+    if (dayNightEl.classList.contains("fa-moon")) {
+        dayNightEl.classList.remove("fa-moon");
+        dayNightEl.classList.add("fa-sun");
+        dayNightEl.style.color = "#f5f5f5";
+        containerEl.classList.remove("day");
+    } else {
+        dayNightEl.classList.remove("fa-sun");
+        dayNightEl.style.color = "#1f2937";
+        dayNightEl.classList.add("fa-moon");
+        containerEl.classList.add("day");
+    }
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+    alert("Copied to clipboard");
+}
+
+password1El.addEventListener("click", () => copyToClipboard(password1El.textContent));
+password2El.addEventListener("click", () => copyToClipboard(password2El.textContent));

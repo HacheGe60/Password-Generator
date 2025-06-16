@@ -25,15 +25,28 @@ body {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.dayNight {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.day {
+    background-color: #f5f5f5;
+    color: #1f2937;
 }
 
 h1 span {
-    color: #4adf86
+    color: #21a054
 }
 
 p {
     font-weight: lighter;
-    color: #d5d4d8;
+    color: #757575;
 }
 
 .options {
@@ -55,11 +68,11 @@ p {
 }
 
 .generateBtn {
-    background-color: #4adf86;
+    background-color: #21a054;
     border: none;
     border-radius: 5px;
     padding: 0.5rem 1rem;
-    color: #1f2937;
+    color: #f5f5f5;
     font-weight: bold;
     cursor: pointer;
     width: 40%;
@@ -82,7 +95,7 @@ hr {
 
 .password {
     background-color: #273549;
-    color: #4adf86;
+    color: #21a054;
     width: 48%;
     border-radius: 5px;
     cursor: pointer;
