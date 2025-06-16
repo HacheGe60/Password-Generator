@@ -9,6 +9,23 @@
     </head>
 
     <body>
+        <div class="container">
+            <h1>Generate a<br><span>random password</span></h1>
+            <p>Never use an insecure password again.</p>
+            <div class="options">
+                <label for="characters">Characters</label>
+                <input type="checkbox" name="characters" id="characters">
+                <label for="numbers">Numbers</label>
+                <input type="checkbox" name="numbers" id="numbers">
+                <label for="symbols">Symbols</label>
+                <input type="checkbox" name="symbols" id="symbols">
+            </div>
+            <button>Generate password</button>
+            <div class="passwords">
+                <p id="password1" class="password"></p>
+                <p id="password2" class="password"></p>
+            </div>
+        </div>
 
         <script src="index.js"></script>
     </body>
